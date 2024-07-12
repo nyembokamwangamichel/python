@@ -1,0 +1,1 @@
+[{"ID": 1, "Nom_client": "Michel", "Nom_produit": "chemise", "Quantite": 2, "Prix_unitaire": 3245.0, "Prix_payer": 6490.0, "Date": "03/07/2024", "Heure": "08:16:42"}, {"ID": 2, "Nom_client": "Gloria", "Nom_produit": "VOITURE", "Quantite": 2, "Prix_unitaire": 4344.0, "Prix_payer": 8688.0, "Date": "04/07/2024", "Heure": "13:54:59"}]
