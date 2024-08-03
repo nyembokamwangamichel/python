@@ -112,3 +112,52 @@ def verification_vente(REPONSE_UTILISATUER_PARAMETRE,VERIFICATEUR_PARAMETRE):
              return VERIFICATEUR_PARAMETRE
         
         return VERIFICATEUR_PARAMETRE
+
+def commandes(nom_client_para,nom_produit_para,Quantite_para,date_livraison_par):
+      
+               
+    try:
+        nom_client_para = int(nom_client_para)  
+    except :            
+            try : 
+                Quantite_para= float(Quantite_para)   
+                
+            except : 
+                    print(Fore.RED +f"\n \t\t\t\tAttention 🚨🚨 il faut un entier pour  la quantité 😯\n"+Style.RESET_ALL)
+                    VERIFICATEUR_PARAMETRE = 1
+                    return VERIFICATEUR_PARAMETRE
+            else :
+                    if nom_client_para == "" or Quantite_para == "" or  date_livraison_par == "" or nom_produit_para == "":
+                            print(Fore.RED +f"\n \t\t\t\tAttention 🚨🚨 touts les champs sont obligatoire😯\n \t\t\t\tRASSIREZ-VOUS D'AVOIR REMPLIR TOUTS LES CHAMPS\n"+Style.RESET_ALL)
+                            
+                            return 0
+                    
+                    elif  len(nom_client_para) < 3 : 
+                            print(Fore.RED +f"\n \t\t\t\tMAUVAISE VALEUR POUR LE NOM DU CLIENT🚨🚨 😯\n"+Style.RESET_ALL)
+                            return 0
+                    else:
+                          return 1
+    else:
+        print(Fore.RED +f"\n \t\t\t\tAttention 🚨🚨 vous venez de saisir un entier pour le nom du client😯\n \t\t\t\tVEUILLEZ SAISIR UNE CHAINE DE CARACTERES\n"+Style.RESET_ALL)
+        return 0
+
+def date_livre(date):
+    
+        jj, mm, aa = date.split("/")
+        jour, mois, annee = int(jj), int(mm), int(aa)
+
+        # Vérification du nombre de jours dans le mois
+        nb_jours_par_mois = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+        if annee % 4 == 0:  
+          nb_jours_par_mois[1] = 29
+
+        if mois < 1 or mois > 12:
+                print(Fore.RED +"\t\t\tErreur : Mois invalide. Pour la date"+Style.RESET_ALL)
+                return 0
+        elif jour < 1 or jour > nb_jours_par_mois[mois - 1]:
+               print(Fore.RED +f"\t\t\tErreur : Le jour ne peut contenir que {nb_jours_par_mois[mois - 1]} jours."+Style.RESET_ALL)
+               return 0
+        else:
+                return 1
+        
+                 

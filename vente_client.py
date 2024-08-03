@@ -9,11 +9,14 @@ def vente_client ():
     VERIFICATEUR  = 0
     while VERIFICATEUR == 0:
         REPONSE_UTILISATUER = input("\n \t\t\t\tEntrez le nom du client : ")
-      
         VERIFICATEUR = verification_vente(REPONSE_UTILISATUER,VERIFICATEUR)
         
     COMPTEUR = 0
     print(Fore.BLUE +f"\n \t\t\t\tINFOS SUR LE(s) VENTE (S) EFFECTUEE (S) PAR {REPONSE_UTILISATUER} \n"+Style.RESET_ALL)
+    for CLIENT in LISTE_RAPPORT:
+            if CLIENT['Nom_client'].lower() == REPONSE_UTILISATUER.lower():
+                COMPTEUR +=1
+    print(Fore.BLUE+f"\n \t\t\t\t Nombre de ventes  éffectuer {COMPTEUR} vente (s) \n"+Style.RESET_ALL)
     for CLIENT in LISTE_RAPPORT:
             if CLIENT['Nom_client'].lower() == REPONSE_UTILISATUER.lower():
                 COMPTEUR +=1

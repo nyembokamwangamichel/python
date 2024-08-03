@@ -69,10 +69,10 @@ def rechercher_produit():
                             if CHOIX_UTILISATEUR not in MENU_CHOICES:
                                 print(Fore.RED +"\t\tVeuillez Choisir une option valide..."+Style.RESET_ALL)
                         if CHOIX_UTILISATEUR == "1":  # toutes les structures , permettentes de lancer un fonction précise selon le choix
-                            suppr_produit(PRODIT_DISP['ID_PRODUIT'])
+                            suppr_produit(COMPTEUR)
                             return
                         elif CHOIX_UTILISATEUR =="2":
-                            modification(PRODIT_DISP['ID_PRODUIT'],RESULTAT)
+                            modification(COMPTEUR,RESULTAT)
                             return
                         elif CHOIX_UTILISATEUR == "3":
                             return  # une fonction de python importée depuis le module sys, qui permet d'arreter l'execution du code

@@ -10,6 +10,9 @@ from vente_client import *
 from Rapport import *
 from Charger_donnees import * 
 from modiffier import * 
+from Filtrage import * 
+from menu_prin_commande import *
+from exportation_Rapport import *
 
 
 LISTE_PRODUITS = []  #la liste vide pour les produits
@@ -23,9 +26,12 @@ MENU = Fore.BLUE +"""\n \t\t\t\t MENU PRINCIPAL\n""" +Style.RESET_ALL +"""
                 4.  Enregistrer vente
                 5.  Afficher ventes
                 6.  Ventes par client
-                7.  Générer rapport de ventes
-                8.  Charger données
-                9.  Quitter
+                7.  Filtrage par vente
+                8.  Géstion de commandes
+                9.  Générer rapport de ventes
+                10. Exporter le rapport
+                11.  Charger données
+                12.  Quitter
                 ❓ Votre choix : """
 
 MENU_CHOICES = ["1","2","3","4","5","6","7","8","9","10","11","12"]   # la liste MENU_CHOIX contient les différents choix selon le menus dispo
@@ -50,11 +56,17 @@ while True:
         elif CHOIX_UTILISATEUR =="6":
             vente_client ()
         elif CHOIX_UTILISATEUR == "7":
+             filtrage()   
+        elif CHOIX_UTILISATEUR == "8":
+               menu_princ()
+        elif CHOIX_UTILISATEUR == "9":
             rapport()
-        elif CHOIX_UTILISATEUR =="8":
+        elif CHOIX_UTILISATEUR =="10":
+            exportation()
+        elif CHOIX_UTILISATEUR =="11":
             charger_donnees_produit()
             charger_donnees_vente()
             print(Fore.GREEN+"\n \t\t\tchargement de données terminer\n"+Style.RESET_ALL)
-        elif CHOIX_UTILISATEUR == "9":
+        elif CHOIX_UTILISATEUR == "12":
             print(Fore.GREEN+"\n \t\t\t\tÀ BIENTÔT...👐"+Style.RESET_ALL)
             sys.exit()  # une fonction de python importée depuis le module sys, qui permet d'arreter l'execution du code

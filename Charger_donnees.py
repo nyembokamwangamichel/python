@@ -12,3 +12,8 @@ def charger_donnees_vente():
         LISTE_RAPPORT = json.load(FICHIER)
     return LISTE_RAPPORT
 
+def charger_donnees_commande():
+    with open('commendes.json','r') as FICHIER:
+        LISTE_COMMANDE = json.load(FICHIER)
+    return LISTE_COMMANDE
+
